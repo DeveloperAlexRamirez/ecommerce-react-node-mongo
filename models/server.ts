@@ -1,18 +1,18 @@
 import express, { Application } from 'express'
 import cors from 'cors'
-import videosRoutes from '../routes/video'
+import userRoutes from '../routes/user'
 import connectDB from '../db/connection';
 
 class Server {
 
     private app: Application;
     private port: string;
-    private videoPath: string;
+    private userPath: string;
 
     constructor() {
         this.app = express();
         this.port = process.env.PORT || '5000';
-        this.videoPath = '/videos';
+        this.userPath = '/user';
 
         this.connectionToDB();
         this.middlewares();
@@ -35,7 +35,7 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.videoPath, videosRoutes)
+        this.app.use(this.userPath, userRoutes)
     }
 
     listen() {
