@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "DeveloperAlexRamirez <alexkey0516@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -22,5 +22,7 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.3",
     "morgan": "^1.10.0"
-  }
+  },
+  "repository": "https://github.com/DeveloperAlexRamirez/ecommerce-react-node-mongo.git",
+  "private": false
 }
