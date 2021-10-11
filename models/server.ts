@@ -14,12 +14,13 @@ class Server {
         this.port = process.env.PORT || '5000';
         this.videoPath = '/videos';
 
-        this.connectToDatabase();
+        this.connectionToDB();
         this.middlewares();
         this.routes();
     }
 
-    async connectToDatabase() {
+
+    async connectionToDB() {
         try {
             await connectDB();
         } catch (error) {

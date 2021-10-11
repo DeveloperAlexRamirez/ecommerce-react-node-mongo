@@ -15,7 +15,7 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
         yield mongoose.connect(process.env.MONGODB_CNN, {
             useNewUrlParser: true,
         });
-        console.log('Conectado a Mongo');
+        console.log('Connected to the Mongo DB');
     }
     catch (error) {
         console.log(error);

@@ -21,11 +21,11 @@ class Server {
         this.app = express_1.default();
         this.port = process.env.PORT || '5000';
         this.videoPath = '/videos';
-        this.connectToDatabase();
+        this.connectionToDB();
         this.middlewares();
         this.routes();
     }
-    connectToDatabase() {
+    connectionToDB() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield connection_1.default();
