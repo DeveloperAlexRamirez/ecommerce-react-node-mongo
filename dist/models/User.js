@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
-const webidl_conversions_1 = require("webidl-conversions");
 const UserSchema = new mongoose_1.Schema({
     username: {
         type: String,
@@ -19,7 +18,7 @@ const UserSchema = new mongoose_1.Schema({
         type: String, required: true
     },
     isAdmin: {
-        type: webidl_conversions_1.boolean,
+        type: Boolean,
         default: false,
     },
 }, { timestamps: true });

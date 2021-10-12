@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose'
-import { boolean } from 'webidl-conversions'
 
 const UserSchema = new Schema({
     username: {
@@ -18,7 +17,7 @@ const UserSchema = new Schema({
         type: String, required: true
     },
     isAdmin: {
-        type: boolean,
+        type: Boolean,
         default: false,
     },
 }, { timestamps: true })

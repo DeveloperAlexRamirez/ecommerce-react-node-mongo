@@ -1,24 +1,26 @@
 import express, { Application } from 'express'
 import cors from 'cors'
-import userRoutes from '../routes/user'
 import connectDB from '../db/connection';
+import userPath from '../routes/user';
+import authPath from '../routes/auth';
 
 class Server {
 
     private app: Application;
     private port: string;
     private userPath: string;
+    private authPath: string;
 
     constructor() {
         this.app = express();
         this.port = process.env.PORT || '5000';
         this.userPath = '/user';
+        this.authPath = '/auth';
 
         this.connectionToDB();
         this.middlewares();
         this.routes();
     }
-
 
     async connectionToDB() {
         try {
@@ -35,7 +37,8 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.userPath, userRoutes)
+        this.app.use(this.userPath, userPath)
+        this.app.use(this.authPath, authPath)
     }
 
     listen() {
