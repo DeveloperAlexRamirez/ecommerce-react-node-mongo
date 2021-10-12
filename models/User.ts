@@ -22,4 +22,12 @@ const UserSchema = new Schema({
     },
 }, { timestamps: true })
 
-export default model('User', UserSchema);
+
+type IUser = {
+    username: string;
+    email: string;
+    password: string;
+    isAdmin: Boolean;
+}
+
+export default model<IUser>('User', UserSchema);
