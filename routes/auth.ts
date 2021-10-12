@@ -1,12 +1,8 @@
-import { Router, request, response } from 'express'
-
+import { Router } from 'express'
+import { createUser } from '../controllers/auth';
 
 const router = Router();
 
-router.get('/', (req = request, res = response) => {
-    res.send({
-        msg: 'Hello world from auth.ts'
-    })
-});
+router.post('/register', createUser);
 
 export default router;

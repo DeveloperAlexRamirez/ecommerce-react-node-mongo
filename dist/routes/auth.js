@@ -1,11 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const auth_1 = require("../controllers/auth");
 const router = express_1.Router();
-router.get('/', (req = express_1.request, res = express_1.response) => {
-    res.send({
-        msg: 'Hello world from auth.ts'
-    });
-});
+router.post('/register', auth_1.createUser);
 exports.default = router;
 //# sourceMappingURL=auth.js.map

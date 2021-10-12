@@ -21,8 +21,8 @@ class Server {
     constructor() {
         this.app = express_1.default();
         this.port = process.env.PORT || '5000';
-        this.userPath = '/user';
-        this.authPath = '/auth';
+        this.userPath = '/api/users';
+        this.authPath = '/api/auth';
         this.connectionToDB();
         this.middlewares();
         this.routes();
